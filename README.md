@@ -1,5 +1,5 @@
 ```markdown
-# Social Sign-in Collections
+## Social Sign-in Collections
 
 This project is a collection of sample code for implementing social media sign-ins with various platforms such as Twitter, Google, Facebook, LinkedIn, and GitHub. This allows users to log in using their preferred social media accounts.
 
