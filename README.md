@@ -40,6 +40,6 @@ social-signin-collections/
 │
 ├── package.json
 ├── package-lock.json
-├── README.md
 └── ...
+```
 ```
