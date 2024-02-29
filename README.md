@@ -14,7 +14,7 @@ cd social-signin-collections
 Then, install the dependencies:
 
 ```bash
-npm install
+npm run dev
 ```
 
 ## Usage
