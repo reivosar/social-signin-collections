@@ -50,4 +50,3 @@ social-signin-collections/
 ├── package-lock.json
 └── ...
 ```
-```
