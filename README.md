@@ -1,17 +1,74 @@
-# Social Sign-in Collections
+Certainly, let's continue with the detailed README.md in markdown format for your Social Sign-In Collections project:
 
-This project is a collection of sample code for implementing social media sign-ins with various platforms such as Twitter, Google, Facebook, LinkedIn, and GitHub. This allows users to log in using their preferred social media accounts.
+---
 
-## Installation
+# Social Sign-In Collections
 
-To use this project, you need to clone it to your local machine:
+This project aims to showcase a comprehensive implementation of social sign-in functionalities for web applications. It is divided into two primary sections: the `backend`, which handles authentication logic and communication with social media platforms, and the `frontend`, which provides a user interface for authentication.
+
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+### Backend
+
+- OAuth2.0 authentication flow implementation for multiple providers.
+- Secure retrieval of user data from social platforms.
+- JWT for secure data transmission.
+
+### Frontend
+
+- User-friendly sign-in interface.
+- Display of user profile information post-authentication.
+- Responsive design for desktop and mobile devices.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm or Yarn
+- Social platform API keys
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/reivosar/social-signin-collections.git
-cd social-signin-collections
 ```
 
-Then, install the dependencies:
+2. Install backend dependencies:
+
+```bash
+cd social-signin-collections/backend
+npm install
+```
+
+3. Set up environment variables as described in `backend/.env.example`.
+
+4. Run the backend server:
+
+```bash
+npm run dev
+```
+
+5. In a new terminal, install frontend dependencies:
+
+```bash
+cd ../frontend
+npm install
+```
+
+6. Run the frontend application:
 
 ```bash
 npm run dev
@@ -19,34 +76,16 @@ npm run dev
 
 ## Usage
 
-1. Navigate to the root directory of the project in your terminal.
-2. Run `npm start` to start the application.
-3. Open [http://localhost:3000](http://localhost:3000) in your browser and click on the social login buttons.
-4. You will be redirected to the login page of the social media platform where you can authenticate.
-5. Upon successful authentication, you will be logged into the application.
+Navigate to `http://localhost:5173` (or your configured port) on your web browser to test the social sign-in functionalities. Click on the sign-in buttons and follow the prompts to authenticate.
 
-## Technologies Used
+## Contributing
 
-- React.js
-- FontAwesome
-- OAuth Authentication
+Contributions to the project are welcome! Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information on how to contribute.
 
-## Directory Structure
+## License
 
-```
-social-signin-collections/
-│
-├── src/
-│   ├── components/
-│   │   └── SocialLoginButtons.tsx
-│   ├── App.tsx
-│   └── index.tsx
-│
-├── public/
-│   ├── index.html
-│   └── ...
-│
-├── package.json
-├── package-lock.json
-└── ...
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+This template provides a structured way to present your project's information, including how to set it up and use it. Make sure to replace the placeholders and instructions with the specific details related to your project.
