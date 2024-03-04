@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import axios from 'axios';
-import { generateRedirectUrl } from '../utils/redirectWithToken';
+import { generateRedirectUrl } from '../utils/tokenUtils';
 
 export const googleRedirect = async (req: Request, res: Response) => {
   const code = req.query.code as string;
