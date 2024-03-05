@@ -42,12 +42,12 @@ export async function handleGoogleRedirect(
 
   const loginTokenId = await save(userProfileData, socialLoginSessionData);
 
-  const authorizationResult = {
+  const authorizedData = {
     loginTokenId,
     email: userProfileData.email,
     name: userProfileData.name,
     tokenExpiry: socialLoginSessionData.socialTokenExpiry,
   };
 
-  return authorizationResult;
+  return authorizedData;
 }

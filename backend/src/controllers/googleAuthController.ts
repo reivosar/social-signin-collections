@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import axios from "axios";
-import { generateRedirectUrl } from "../services/urlCreateService";
+import { generateRedirectUrl } from "../services/urlGenerateService";
 import { handleGoogleRedirect } from "../services/googleAuthService";
 
 export const googleRedirect = async (req: Request, res: Response) => {
