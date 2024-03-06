@@ -1,91 +1,120 @@
-Certainly, let's continue with the detailed README.md in markdown format for your Social Sign-In Collections project:
+## Social Sign-In Collections
 
----
-
-# Social Sign-In Collections
-
-This project aims to showcase a comprehensive implementation of social sign-in functionalities for web applications. It is divided into two primary sections: the `backend`, which handles authentication logic and communication with social media platforms, and the `frontend`, which provides a user interface for authentication.
-
-## Table of Contents
-
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+This project integrates multiple social login options, including Google, Facebook, and Twitter, using the OAuth 2.0 protocol to authenticate users in a simple and secure way.
 
 ## Features
 
+- Integration of multiple social login providers.
+- Secure user authentication and session management.
+- Utilizes OAuth 2.0 protocol for secure delegated access.
+- Backend API to manage user sessions and retrieve user information.
+
+## Prerequisites
+
+- [Docker](https://www.docker.com/) for running MongoDB and Mongo Express containers.
+- [Node.js](https://nodejs.org/en/) (version 14 or higher recommended).
+
+## Setup
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+
+    ```bash
+    cd backend
+    ```
+
+2. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Start MongoDB and Mongo Express using Docker:
+
+    Ensure Docker is running, then execute:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+4. Set up environment variables:
+
+    Copy the environment variables listed at the end of this README into a `.env` file in the backend directory.
+
+5. Start the backend server:
+
+    For development:
+
+    ```bash
+    npm run dev
+    ```
+
+    For production:
+
+    ```bash
+    npm run build
+    npm start
+    ```
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+
+    ```bash
+    cd frontend
+    ```
+
+2. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Set up environment variables:
+
+    Copy the environment variables listed at the end of this README into a `.env.local` file in the frontend directory.
+
+4. Start the frontend application:
+
+    ```bash
+    npm run dev
+    ```
+
+    The application will be available at [http://localhost:5173](http://localhost:5173).
+
+## OAuth 2.0 Login Flow
+
+The application uses the OAuth 2.0 protocol for authentication with various social login providers. The flow is as follows:
+
+1. **User initiates login** via the frontend, selecting their preferred social login provider.
+2. **Frontend redirects** the user to the provider's OAuth 2.0 authorization endpoint.
+3. **User consents** to grant the application access to their information.
+4. **Provider redirects** back to the frontend with an authorization code.
+5. **Frontend sends** the authorization code to the backend.
+6. **Backend exchanges** the authorization code for an access token.
+7. **Backend retrieves** user information using the access token and creates a session.
+8. **User is logged in**, with session information stored in an HttpOnly cookie for security.
+
+## Environment Variables
+Below is what you need to change.
+
 ### Backend
 
-- OAuth2.0 authentication flow implementation for multiple providers.
-- Secure retrieval of user data from social platforms.
-- JWT for secure data transmission.
+```env
+COOKIE_SECRET=cookie_secret_here
+JWT_SECRET=jwt_secret_here
+
+GOOGLE_CLIENT_ID=your_google_client_id_here
+GOOGLE_CLIENT_SECRET=your_google_client_secret_here
+```
 
 ### Frontend
 
-- User-friendly sign-in interface.
-- Display of user profile information post-authentication.
-- Responsive design for desktop and mobile devices.
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js
-- npm or Yarn
-- Social platform API keys
-
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/reivosar/social-signin-collections.git
+```env
+VITE_GOOGLE_CLIENT_ID=your_google_client_id_here
 ```
-
-2. Install backend dependencies:
-
-```bash
-cd social-signin-collections/backend
-npm install
-```
-
-3. Set up environment variables as described in `backend/.env.example`.
-
-4. Run the backend server:
-
-```bash
-npm run dev
-```
-
-5. In a new terminal, install frontend dependencies:
-
-```bash
-cd ../frontend
-npm install
-```
-
-6. Run the frontend application:
-
-```bash
-npm run dev
-```
-
-## Usage
-
-Navigate to `http://localhost:5173` (or your configured port) on your web browser to test the social sign-in functionalities. Click on the sign-in buttons and follow the prompts to authenticate.
-
-## Contributing
-
-Contributions to the project are welcome! Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information on how to contribute.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-This template provides a structured way to present your project's information, including how to set it up and use it. Make sure to replace the placeholders and instructions with the specific details related to your project.
+Adjust the paths, environment variables, and other configurations as necessary for your project. This README provides a comprehensive guide to setting up and running both the backend and frontend parts of your project, along with a brief overview of the OAuth 2.0 login flow.
