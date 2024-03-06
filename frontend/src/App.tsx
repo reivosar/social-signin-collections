@@ -1,10 +1,10 @@
 import "./App.css";
 import SocialLoginButtons from "./components/SocialLoginButtons";
 import RedirectPage from "./components/RedirectPage";
-import useAuthenticateUser from "./hooks/useAuthenticateUser";
+import useAuthenticate from "./hooks/useAuthentication";
 
 function App() {
-  const { userInfo, isLoggedIn, logout } = useAuthenticateUser();
+  const { userInfo, isLoggedIn, logout } = useAuthenticate();
 
   return (
     <div className="App">
