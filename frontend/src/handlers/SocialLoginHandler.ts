@@ -1,3 +1,3 @@
 export interface SocialLoginHandler {
-    loginHandler(): void;
+  loginHandler(): void;
 }
