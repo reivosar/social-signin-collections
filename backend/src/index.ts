@@ -11,7 +11,7 @@ import corsOptions from "./configs/corsConfig";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 connectDB();
 
@@ -21,6 +21,6 @@ app.use(session(cookieConfig));
 app.use(cookieParser());
 app.use(apiRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
