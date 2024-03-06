@@ -12,7 +12,6 @@ export async function findUserProfileBy(
 ): Promise<UserProfileData | null> {
   const socialLoginSession = await SocialLoginSession.findOne({
     loginTokenId: loginTokenId,
-    socialTokenExpiry: { $gt: new Date() },
   });
   if (!socialLoginSession) {
     return null;
