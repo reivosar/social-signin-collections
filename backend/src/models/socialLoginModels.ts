@@ -13,7 +13,5 @@ export interface SocialLoginSessionData {
 
 export interface AuthorizedData {
   loginTokenId: string;
-  email: string;
-  name: string;
   tokenExpiry: Date;
 }
