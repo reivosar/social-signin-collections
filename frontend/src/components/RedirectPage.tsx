@@ -4,13 +4,15 @@ const RedirectPage: React.FC<{
   onLogout: () => void;
   userInfo: { email?: string; name?: string };
 }> = ({ onLogout, userInfo }) => {
-  if (!userInfo) {
+  const isUserInfoAvailable = userInfo.email || userInfo.name;
+
+  if (!isUserInfoAvailable) {
     return (
       <div className="container">
         <h1 className="title">Login Error</h1>
-        <p className="errorMessage">Login failed.</p>
+        <p className="errorMessage">Login failed. Please try again.</p>
         <button className="logoutButton" onClick={onLogout}>
-          Go Back
+          Try Again
         </button>
       </div>
     );
@@ -21,7 +23,7 @@ const RedirectPage: React.FC<{
       <h1 className="title">Welcome, {userInfo.name}!</h1>
       <p className="userInfo">Your email: {userInfo.email}</p>
       <button className="logoutButton" onClick={onLogout}>
-        Go Back
+        Logout
       </button>
     </div>
   );
