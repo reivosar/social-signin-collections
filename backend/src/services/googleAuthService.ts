@@ -44,8 +44,6 @@ export async function handleGoogleRedirect(
 
   const authorizedData = {
     loginTokenId,
-    email: userProfileData.email,
-    name: userProfileData.name,
     tokenExpiry: socialLoginSessionData.socialTokenExpiry,
   };
 

@@ -1,18 +1,23 @@
 import { Request, Response } from "express";
-import axios from "axios";
-import { generateRedirectUrl } from "../services/urlGenerateService";
 import { handleGoogleRedirect } from "../services/googleAuthService";
+import { setAuthTokenToCookie } from "../services/cookieService";
+import {
+  redirectToLoginSuccessPage,
+  redirectToLoginFailedPage,
+} from "../services/redirectService";
 
 export const googleRedirect = async (req: Request, res: Response) => {
   try {
     const code = req.query.code as string;
     const authorizationResult = await handleGoogleRedirect(code);
-    const redirectUrl = generateRedirectUrl(authorizationResult);
-    res.redirect(redirectUrl);
+    setAuthTokenToCookie(
+      res,
+      authorizationResult,
+      authorizationResult.tokenExpiry
+    );
+    redirectToLoginSuccessPage(res);
   } catch (error) {
     console.error("Error during Google redirect flow:", error);
-    const failedRedirectUrl =
-      process.env.FRONTEND_LOGIN_FAILED_URL || "/login-failed";
-    res.redirect(failedRedirectUrl);
+    redirectToLoginFailedPage(res);
   }
 };

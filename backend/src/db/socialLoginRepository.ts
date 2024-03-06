@@ -7,13 +7,26 @@ import {
   SocialLoginSessionData,
 } from "../models/socialLoginModels";
 
-export async function findAvailableSocialLoginSession(loginTokenId: string) {
-  const now = new Date();
-  const result = await SocialLoginSession.find({
+export async function findUserProfileBy(
+  loginTokenId: string
+): Promise<UserProfileData | null> {
+  const socialLoginSession = await SocialLoginSession.findOne({
     loginTokenId: loginTokenId,
-    socialTokenExpiry: { $gt: now },
+    socialTokenExpiry: { $gt: new Date() },
   });
-  return result;
+  if (!socialLoginSession) {
+    return null;
+  }
+  const userProfileData = await UserProfile.findOne({
+    _id: socialLoginSession.userProfileId,
+  });
+  if (!userProfileData) {
+    return null;
+  }
+  return {
+    email: userProfileData.email || "",
+    name: userProfileData.name || "",
+  };
 }
 
 export async function save(
