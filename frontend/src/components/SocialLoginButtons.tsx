@@ -25,7 +25,7 @@ const SocialLoginButtons: React.FC<{ onLogin: () => void }> = ({}) => {
       </button>
       <button
         className="social-login-button github"
-        onClick={() => handleLogin("gitHub")}
+        onClick={() => handleLogin("github")}
       >
         <FontAwesomeIcon icon={faGithub} /> Login with GitHub
       </button>
