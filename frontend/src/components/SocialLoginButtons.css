@@ -4,14 +4,14 @@
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
-}
-
-.social-login-button {
+  }
+  
+  .social-login-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; 
-    width: 350px; 
+    gap: 10px;
+    width: 350px;
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
@@ -19,12 +19,24 @@
     font-size: 18px;
     color: white;
     transition: background-color 0.3s;
-    margin-bottom: 1%;
-}
-
-.google { background-color: #DB4437; }
-.github { background-color: #333; }
-
-.social-login-button:hover {
-    opacity: 0.9; 
-}
+    margin-bottom: 20px; /* Adjusted for visual spacing between buttons */
+  }
+  
+  .social-login-message {
+    margin-top: -10px; /* Negative margin to move closer to buttons */
+    padding-top: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px; /* Optional for text size adjustment */
+    width: 350px; /* Match button width for alignment */
+    text-align: center;
+  }
+  
+  .google { background-color: #DB4437; }
+  .github { background-color: #333; }
+  
+  .social-login-button:hover {
+    opacity: 0.9;
+  }
+  

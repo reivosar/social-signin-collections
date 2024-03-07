@@ -29,6 +29,11 @@ const SocialLoginButtons: React.FC<{ onLogin: () => void }> = ({}) => {
       >
         <FontAwesomeIcon icon={faGithub} /> Login with GitHub
       </button>
+      <p className="social-login-message">
+        While I understood how to implement Yahoo, LinkedIn, Facebook, and
+        Twitter logins, the pre-registration process was too cumbersome, so I
+        decided to forgo it.
+      </p>
     </div>
   );
 };
