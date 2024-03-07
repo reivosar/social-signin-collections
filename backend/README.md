@@ -43,9 +43,14 @@ npm install
 Set up your environment variables by creating a `.env` file in the root of the backend directory with the following contents:
 
 ```plaintext
+COOKIE_SECRET=cookie_secret_here
+JWT_SECRET=your_jwt_secret
+
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
-JWT_SECRET=your_jwt_secret
+
+GITHUB_CLIENT_ID=your_github_client_id_here
+GITHUB_CLIENT_SECRET=your_github_client_secret_here
 ```
 
 Run the server:
@@ -59,7 +64,8 @@ npm run dev
 After starting the server, it will listen for authentication requests at predefined endpoints. For example:
 
 - `/auth/google` for Google sign-in.
-
+- `/auth/github` for Github sign-in.
+- 
 Refer to the API documentation for detailed usage.
 
 ## Contributing
